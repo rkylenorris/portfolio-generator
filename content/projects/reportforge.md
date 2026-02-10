@@ -15,3 +15,11 @@ Summary: A production-grade reporting orchestration tool bridging .NET 10 and Po
 * **Fail-Fast Architecture:** Configuration and schema errors stop execution before data is written.
 * **Security:** Employs environment variable interpolation (`${VAR_NAME}`) to ensure secrets never touch the disk in plain text.
 * **Strict Tooling:** Uses a custom build system (`build.ps1`) to compile DLLs and package the PowerShell module.
+
+### System Architecture
+
+The project follows a strict separation of concerns to ensure CI/CD compatibility:
+
+* **Root Module:** `ReportForge.psd1` handles the manifest and loading.
+* **Src/DotNet:** Contains the C# solution for Core, Excel, and Parquet logic.
+* **Src/PowerShell:** Contains the public cmdlets like `Invoke-ReportForgeRun` and `Test-ReportForgeConfig`.
