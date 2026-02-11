@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "markdown>=3.10.2",
     "pelican[markdown]>=4.11.0.post0",
     "python-dotenv>=1.2.1",
 ]
