@@ -59,6 +59,11 @@ h2 {
     color: var(--accent-color);
 }
 
+.project-card li {
+    list-style-type: none; /* We're using emojis as bullets now */
+    margin-bottom: 8px;
+}
+
 .btn {
     display: inline-block;
     background: var(--accent-color);
