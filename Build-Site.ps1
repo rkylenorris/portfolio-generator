@@ -9,7 +9,6 @@ uv run main.py
 # This takes your /content folder and /theme and outputs to /output
 Write-Host "--- Generating Static HTML with Pelican ---" -ForegroundColor Yellow
 $ErrorActionPreference = "Stop"
-pelican content -o output -s pelicanconf.py
-# TODO: Fix navigation issue with Pelican           
+pelican content -o output -s pelicanconf.py       
 
 Write-Host "--- Build Complete! Check the /output folder ---" -ForegroundColor Green
