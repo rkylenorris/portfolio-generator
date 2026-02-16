@@ -4,6 +4,7 @@ SITEURL = '.'
 RELATIVE_URLS = True
 
 PATH = "content"
+USE_FOLDER_AS_CATEGORY = True
 
 TIMEZONE = 'America/New_York'
 
@@ -20,3 +21,14 @@ EXTRA_PATH_METADATA = {
 
 # Display pages in menu
 DISPLAY_PAGES_ON_MENU = True
+
+# pelicanconf.py
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {'raw_html': True},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}

@@ -58,7 +58,7 @@ def generate_report_forge_page():
     )
 
     # 5. Save to Content
-    save_as_path = Path('content/pages/report_forge.md')
+    save_as_path = Path('content/projects/report_forge.md')
     if save_as_path.exists():
         os.remove(save_as_path)
     with save_as_path.open('wb') as f:

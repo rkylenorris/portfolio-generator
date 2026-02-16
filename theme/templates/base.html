@@ -1,42 +1,51 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {{ SITENAME }}{% if PAGE_TITLE %} - {{ PAGE_TITLE }}{% endif %}
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/assets/initials_logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    {{ SITENAME }}{% if PAGE_TITLE %} - {{ PAGE_TITLE }}{% endif %}
-  </title>
-  <link rel="icon" type="image/png" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/assets/initials_logo.png" />
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
-</head>
-
-<body>
-  <header>
-    <div class="header-content">
-      <div class="logo-container">
-        <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/assets/initials_logo.png" alt="Initials Logo" class="logo" />
+  <body>
+    <header class="site-top">
+      <div class="header-content">
+        <div class="logo-container">
+          <img
+            src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/assets/initials_logo.png"
+            alt="Initials Logo"
+            class="logo"
+          />
+        </div>
+        <div class="nameTitle">
+          <a href="mailto:r.kyle.norris@gmail.com" class="nameTitle">
+            <h1>R. Kyle Norris</h1>
+          </a>
+          <hr />
+          <p>Automation Engineer | Data Analyst | Full-Stack Developer</p>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            {% if DISPLAY_PAGES_ON_MENU %} {% for pg in categories %}
+            <li {% if pg==page %} class="active" {% endif %}>
+              <a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
+            </li>
+            {% endfor %} {% endif %}
+          </ul>
+        </nav>
       </div>
-      <div class="nameTitle">
-        <a href="mailto:r.kyle.norris@gmail.com" class="nameTitle">
-          <h1>R. Kyle Norris</h1>
-        </a>
-        <hr />
-        <p>Automation Engineer | Data Analyst | Full-Stack Developer</p>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          {% if DISPLAY_PAGES_ON_MENU %} {% for pg in pages %}
-          <li {% if pg==page %} class="active" {% endif %}>
-            <a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
-          </li>
-          {% endfor %} {% endif %}
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>{% block content %} {% endblock %}</main>
-</body>
-
+    <main>{% block content %} {% endblock %}</main>
+  </body>
 </html>

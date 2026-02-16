@@ -10,13 +10,19 @@ Sort_order: 2
 
 ### Project Status: {{ progress_pct }}% Complete
 
+<progress max="100" value="{{ progress_pct }}"></progress>
+
 #### Engineering Roadmap
+
 {% for section in sections %}
+
 ##### {{ section.name }}
+
 {% for step in section.steps %}
 {% if step.status == "Complete" %}✅{% elif step.status == "InProgress" %}⏳{% else %}⚪{% endif %} **{{ step.name }}**: {{ step.description }}
 {% endfor %}
 {% endfor %}
+
 ### Project Overview
 
 ReportForge is designed to generate repeatable, production-grade business reports. It orchestrates SQL execution, populates Excel templates using **ClosedXML**, and exports **Parquet** datasets.
